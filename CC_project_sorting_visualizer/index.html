@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0 — Sorting Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <span class="logo-icon">⬛</span>
+                <h1 class="title">Ox<span class="accent">Shubham</span></h1>
+            </div>
+            <p class="subtitle">Algorithm Visualizer</p>
+        </header>
+
+        <!-- Complexity Badge -->
+        <div class="complexity-bar">
+            <div class="complexity-item">
+                <span class="complexity-label">Algorithm</span>
+                <span class="complexity-value" id="algo-name">Bubble Sort</span>
+            </div>
+            <div class="divider"></div>
+            <div class="complexity-item">
+                <span class="complexity-label">Time (Best)</span>
+                <span class="complexity-value" id="time-best">O(n)</span>
+            </div>
+            <div class="complexity-item">
+                <span class="complexity-label">Time (Avg)</span>
+                <span class="complexity-value" id="time-avg">O(n²)</span>
+            </div>
+            <div class="complexity-item">
+                <span class="complexity-label">Time (Worst)</span>
+                <span class="complexity-value" id="time-worst">O(n²)</span>
+            </div>
+            <div class="divider"></div>
+            <div class="complexity-item">
+                <span class="complexity-label">Space</span>
+                <span class="complexity-value" id="space">O(1)</span>
+            </div>
+        </div>
+
+        <!-- Visualizer -->
+        <div class="visualizer" id="visualizer"></div>
+
+        <!-- Controls -->
+        <div class="controls">
+
+            <div class="control-group">
+                <label class="control-label">Algorithm</label>
+                <select class="select" id="algorithm">
+                    <option value="bubble">Bubble Sort</option>
+                    <option value="selection">Selection Sort</option>
+                    <option value="insertion">Insertion Sort</option>
+                    <option value="merge">Merge Sort</option>
+                    <option value="quick">Quick Sort</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">Array Size — <span id="size-val">50</span></label>
+                <input type="range" class="slider" id="array-size" min="20" max="100" value="50" />
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">Speed — <span id="speed-val">Medium</span></label>
+                <input type="range" class="slider" id="speed" min="1" max="5" value="3" />
+            </div>
+
+            <div class="control-group" style="flex: 2; min-width: 250px;">
+                <label class="control-label">Custom Array</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="custom-input" class="input" placeholder="e.g. 50, 10, 80, 20" />
+                    <button class="btn btn-secondary" id="apply-custom-btn"
+                        style="padding: 0 12px; font-size: 0.75rem;">Apply</button>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" id="generate-btn">New Array</button>
+                <button class="btn btn-primary" id="start-btn">▶ Sort</button>
+                <button class="btn btn-secondary" id="pause-btn" disabled>⏸ Pause</button>
+            </div>
+
+        </div>
+
+        <!-- Status bar -->
+        <div class="status-bar">
+            <span id="status-text">Ready — generate an array and start sorting.</span>
+            <span id="comparisons">Comparisons: 0</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
